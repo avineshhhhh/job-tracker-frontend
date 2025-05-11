@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #00dc82;
+    --primary-dark: #00b368;
+    --secondary: #0a2e36;
+    --accent: #00ffbb;
+    --background: #040b0c;
+  }
+
+  :root[class~="dark"] {
+    --primary: #00dc82;
+    --primary-dark: #00b368;
+    --secondary: #0a2e36;
+    --accent: #00ffbb;
+    --background: #040b0c;
+  }
+
+  :root[class~="light"] {
+    --primary: #0caf60;
+    --primary-dark: #098b4c;
+    --secondary: #f3f4f6;
+    --accent: #10b981;
+    --background: #ffffff;
+  }
+
+  body {
+    @apply bg-background antialiased;
+  }
+
+  .dark body {
+    @apply text-white;
+  }
+
+  .light body {
+    @apply text-gray-800;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
+  }
+
+  .light .glass-card {
+    @apply bg-white shadow-lg border-gray-100;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow2 {
+    @apply transition-all duration-300;
+  }
+
+  .dark .hover-glow2 {
+    @apply hover:shadow-[0_0_8px_rgba(0,220,130,0.3)];
+  }
+
+  .dark .hover-glow {
+    @apply hover:shadow-[0_0_30px_rgba(0,220,130,0.3)];
+  }
+
+  .light .hover-glow {
+    @apply hover:shadow-lg border border-transparent hover:border-gray-200;
+  }
+
+  .light input,
+  .light textarea {
+    @apply bg-gray-50 border-gray-200 text-gray-800 placeholder-gray-400 !important;
+  }
+
+  .light input:focus,
+  .light textarea:focus {
+    @apply border-gray-300 ring-1 ring-gray-200 !important;
+  }
+
+  .light .text-white\/70 {
+    @apply text-gray-600;
+  }
+
+  .light .text-white\/60 {
+    @apply text-gray-500;
+  }
+
+  .light .text-white\/50 {
+    @apply text-gray-400;
+  }
+
+  .light .border-white\/10 {
+    @apply border-gray-100;
+  }
+
+  .light .border-white\/20 {
+    @apply border-gray-200;
+  }
+
+  .light .bg-white\/5 {
+    @apply bg-gray-50;
+  }
+
+  .light .bg-white\/10 {
+    @apply bg-gray-100;
+  }
+
+  .light .hover\:bg-white\/10:hover {
+    @apply hover:bg-gray-100;
+  }
+
+  .light .bg-black\/50 {
+    @apply bg-gray-800/50;
+  }
+}
+
+@font-face {
+  font-family: "CalSans";
+  src: url("https://fonts.cdnfonts.com/css/cal-sans") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
